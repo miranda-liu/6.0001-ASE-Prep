@@ -1,4 +1,3 @@
-
 varA = -5
 varB = -10
 print(type(varA))
