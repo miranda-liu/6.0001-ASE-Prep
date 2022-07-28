@@ -73,18 +73,52 @@
 # else:
 #     print('succeeded: ' + str(guess))
 
-x = 25
-epsilon = 0.01
-step = 0.1
-guess = 0.0
+# enumerative search
+# x = 23
+# epsilon = 0.01
+# step = 0.1
+# guess = 0.0
 
-while abs(guess**2-x) >= epsilon:
-    if guess <= x:
-        guess += step
+# while abs(guess**2-x) >= epsilon:
+#     if guess <= x:
+#         guess += step
+#     else:
+#         break
+
+# if abs(guess**2 - x) >= epsilon:
+#     print('failed')
+# else:
+#     print('succeeded: ' + str(guess))
+
+
+# bisection search
+# Please think of a number between 0 and 100!
+# Is your secret number 50?
+# Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly. l
+# Is your secret number 75?
+# Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly. l
+# Is your secret number 87?
+   # print("Is your secret number " + str(current_num) + "?")
+
+print("Please think of a number between 0 and 100!")
+guess = False
+low = 0
+high = 100
+ans = (high+low)/2.0
+while guess == False:
+    print("Is your secret number" + ans + "?")
+    user_input = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly")
+    if user_input == "h":
+        high = ans
+    elif user_input == "l":
+        low = ans
+    elif user_input == "c":
+        guess = True
+        print("Game over. Your secret number was: " + ans)
     else:
-        break
+        print("Sorry, I did not understand your input.")
+    ans = (high+low)/2.0
 
-if abs(guess**2 - x) >= epsilon:
-    print('failed')
-else:
-    print('succeeded: ' + str(guess))
+
+
+
